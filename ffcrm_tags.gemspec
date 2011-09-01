@@ -6,7 +6,7 @@
    
    Gem::Specification.new do |s|
      s.name        = "bundler"
-     s.version     =FfcrmTags::VERSION
+     s.version     ='0.0.1'
      s.platform    = Gem::Platform::RUBY
      s.authors     = ["Mike Hagedorn"]
      s.email       = ["mike@silverchairsolutions.com"]
