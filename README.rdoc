@@ -1,6 +1,6 @@
 = ffcrm_tags
 
-Description goes here.
+Gemified version of the original crm_tags plugin
 
 == Contributing to ffcrm_tags
  

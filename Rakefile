@@ -17,8 +17,7 @@ Jeweler::Tasks.new do |gem|
   gem.name = "ffcrm_tags"
   gem.homepage = "http://github.com/mwhagedorn/ffcrm_tags"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{gemified version of the original crm_tags plugin}
   gem.email = "mike@silverchairsolutions.com"
   gem.authors = ["Mike Hagedorn"]
   # dependencies defined in Gemfile
