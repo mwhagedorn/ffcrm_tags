@@ -51,3 +51,17 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
+
+
+$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
+require "ffcrm_tags/version"
+ 
+task :build do
+  system "gem build ffcrm_tags.gemspec"
+end
+ 
+task :release => :build do
+  system "gem push ffcrm_tags-#{Bunder::VERSION}"
+end
+
+
