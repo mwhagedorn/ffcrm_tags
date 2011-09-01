@@ -1,7 +1,9 @@
 directory = File.expand_path(File.dirname(__FILE__))
 
 
-
+[ Account, Campaign, Contact, Lead, Opportunity ].each do |klass|
+  require "#{Rails.root}/app/models/#{klass.name.downcase}.rb"
+end
 
 
 require File.join(directory, 'ffcrm_tags', 'models')
