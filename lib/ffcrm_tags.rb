@@ -2,7 +2,7 @@ directory = File.expand_path(File.dirname(__FILE__))
 
 
 [ "account", "campaign", "contact", "lead", "opportunity" ].each do |klass|
-  require "#{Rails.root}/app/models/#{klass.name.downcase}.rb"
+  require "#{Rails.root}/app/models/#{klass}.rb"
 end
 
 
