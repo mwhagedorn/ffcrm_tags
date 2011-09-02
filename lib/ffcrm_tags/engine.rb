@@ -6,7 +6,7 @@ require "rails"
 module Ffcrm_Tags
   class Engine < Rails::Engine
     
-    initializer 'ffcrm_tags.app_controller',:after =>:set_autoload_paths do |app|
+    initializer 'ffcrm_tags.app_controller',:after =>:disable_dependency_loading do |app|
           #ActiveSupport.on_load(:action_controller) do
           #  #include CrmTags::ControllerActions
           #
