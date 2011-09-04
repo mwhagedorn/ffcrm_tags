@@ -1,4 +1,4 @@
-module CrmTags
+module FfcrmTags
   module ControllerActions
 
     # Controller instance method that responds to /controlled/tagged/tag request.
@@ -13,4 +13,4 @@ module CrmTags
   end
 end
 
-ApplicationController.send(:include, CrmTags::ControllerActions)
+ApplicationController.send(:include, FfcrmTags::ControllerActions)

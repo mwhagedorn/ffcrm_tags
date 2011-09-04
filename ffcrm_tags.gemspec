@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ffcrm_tags}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Mike Hagedorn}]
@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
   s.licenses = [%q{MIT}]
   s.require_paths = [%q{lib}]
   s.rubygems_version = %q{1.8.8}
-  s.summary = %q{TODO: one-line summary of your gem}
+  s.summary = %q{Gemified version of the plugin}
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

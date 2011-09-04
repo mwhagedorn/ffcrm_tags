@@ -1,4 +1,4 @@
-module CrmTags
+module FfcrmTags
   module ViewHelpers
 
     # Generate tag links for use on asset index pages.
@@ -20,11 +20,11 @@ module CrmTags
     #----------------------------------------------------------------------------
     def tags_for_show(model)
       model.tag_list.inject([]) do |arr, tag|
-        arr << link_to(tag, url_for(:action => "tagged", :id => tag), :title => tag)
+        arr << link_to(tag, url_for(:controller => "#{model.class.to_s.tableize}",:action => "tagged", :id => tag), :title => tag)
       end.join(" ")
     end
 
   end
 end
 
-ActionView::Base.send(:include, CrmTags::ViewHelpers)
+
