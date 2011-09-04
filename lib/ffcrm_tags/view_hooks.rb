@@ -38,32 +38,26 @@ EOS
   [ :account, :campaign, :contact, :lead, :opportunity ].each do |model|
 
     define_method :"#{model}_top_section_bottom" do |view, context|
-      render_to_string(view,:partial =>"shared/_top_section_bottom.html.haml", :f => context[:f],:model =>context[model], :span =>(model != :campaign ? 3 : 5))
+      render_to_string(view,:partial =>"shared/top_section_bottom", :f => context[:f],:model =>context[model], :span =>(model != :campaign ? 3 : 5))
     end
 
     define_method :"#{model}_bottom" do |view, context|
       unless context[model].tag_list.empty?
-        Rails.logger.error("Got to HERE")
-        render_to_string(view, :partial =>"shared/_bottom.html.haml", :model => context[model])
+        render_to_string(view, :partial =>"shared/bottom", :model => context[model])
       end
     end
 
     define_method :"show_#{model}_sidebar_bottom" do |view, context|
       unless context[model].tag_list.empty?
-        render_to_string(view, :partial =>"shared/_show_sidebar_bottom.html.haml", :model => context[model])
+        render_to_string(view, :partial =>"shared/show_sidebar_bottom", :model => context[model])
       end
     end
 
   end
 
-
-   ##TODO this shouldnt just be HAML
    def render_to_string(view,options={})
       partial = options.delete(:partial)
-      directory = File.expand_path(File.dirname(__FILE__))
-      path =  File.join(directory,"../../app/views",partial)
-      template = File.read(path)
-      Haml::Engine.new(template).render(view, options)
+      view.controller.send(:render_to_string,:partial =>partial, :locals =>options)
    end
 
 end
