@@ -3,8 +3,6 @@ require "ffcrm_tags"
 require "rails"
 
 
-
-
 module Ffcrm_Tags
   class Engine < Rails::Engine
     initializer "ffcrm_tags.load_engine_classes" do |app|
@@ -19,7 +17,6 @@ module Ffcrm_Tags
           include FfcrmTags::ViewHelpers
       end
     end
-
     config.after_initialize do
            directory = File.expand_path(File.dirname(__FILE__))
            require File.join(directory,'controller_actions')
