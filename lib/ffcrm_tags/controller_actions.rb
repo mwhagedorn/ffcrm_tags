@@ -13,4 +13,3 @@ module FfcrmTags
   end
 end
 
-ApplicationController.send(:include, FfcrmTags::ControllerActions)

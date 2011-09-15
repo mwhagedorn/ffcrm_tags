@@ -1,4 +1,3 @@
-require 'render_anywhere'
 class ViewHooks < FatFreeCRM::Callback::Base
 
   TAGS_STYLES = <<EOS
