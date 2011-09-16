@@ -53,6 +53,11 @@ EOS
     end
 
   end
+  
+  def sidebar_bottom(view,context)
+     render_to_string(view, :partial =>"shared/sidebar_bottom")
+ 
+  end
 
    def render_to_string(view,options={})
       partial = options.delete(:partial)

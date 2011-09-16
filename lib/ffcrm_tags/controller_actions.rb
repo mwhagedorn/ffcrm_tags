@@ -10,6 +10,11 @@ module FfcrmTags
       redirect_to :action => "index"
     end
 
+
+    def get_tag_cloud_counts
+      @tags = TagAggregator.tag_counts_on(:tags)
+    end
+
   end
 end
 
