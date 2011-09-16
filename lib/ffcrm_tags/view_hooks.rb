@@ -12,13 +12,19 @@ class ViewHooks < FatFreeCRM::Callback::Base
   a:hover
     :background steelblue
     :color yellow
-  #tagcloud
-    a, a:visited
-      color:black
-    .css1 { font-size: 1.0em; color:black !important; }
-    .css2 { font-size: 1.2em; color:black !important; }
-    .css3 { font-size: 1.4em; color:black !important; }
-    .css4 { font-size: 1.6em; color:black !important; }
+#tagcloud
+  a, a:visited
+    :color black
+  .css1,.css2,.css3,.css4
+    :color black !important
+  .css1
+    :font-size 1.0em
+  .css2
+    font-size: 1.2em
+  .css3
+    font-size: 1.4em
+  .css4
+    font-size: 1.6em
 EOS
 
   TAGS_JAVASCRIPT = <<EOS
