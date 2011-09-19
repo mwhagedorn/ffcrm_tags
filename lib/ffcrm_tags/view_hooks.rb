@@ -20,11 +20,13 @@ class ViewHooks < FatFreeCRM::Callback::Base
   .css1
     :font-size 1.0em
   .css2
-    font-size: 1.2em
+    :font-size 1.2em
   .css3
-    font-size: 1.4em
+    :font-size 1.4em
   .css4
-    font-size: 1.6em
+    :font-size 1.6em
+.tagged_results
+  :margin-top 20px
 EOS
 
   TAGS_JAVASCRIPT = <<EOS
@@ -71,6 +73,12 @@ EOS
      render_to_string(view, :partial =>"shared/sidebar_bottom")
  
   end
+
+  def tagged_results(view,context)
+     render_to_string(view, :partial =>"shared/tagged_results")
+  end
+
+
 
    def render_to_string(view,options={})
       partial = options.delete(:partial)

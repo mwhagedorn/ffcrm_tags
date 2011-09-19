@@ -76,6 +76,19 @@ class ControllerHooks < FatFreeCRM::Callback::Base
     end
   end
 
+  def home_controller(controller, context={})
+       # TODO put in the stuff to process the tagged results here
+    #klass.my(context[:records]).tagged_with(tags, :on => :tags)
+    if controller.params[:tags]
+      controller.instance_variable_set :@accounts , Account.my(:user => @current_user,:order =>  Account.sort_by ).tagged_with(controller.params[:tags], :on=>:tags)
+      controller.instance_variable_set :@campaigns,Campaign.my(:user => @current_user,:order => Campaign.sort_by ).tagged_with(controller.params[:tags], :on=>:tags)
+      controller.instance_variable_set :@contacts,Contact.my(:user => @current_user,:order =>  Contact.sort_by ).tagged_with(controller.params[:tags], :on=>:tags)
+      controller.instance_variable_set :@leads ,Lead.my(:user => @current_user,:order => Lead.sort_by ).tagged_with(controller.params[:tags], :on=>:tags)
+      controller.instance_variable_set :@opportunities , Opportunity.my(:user => @current_user,:order => Opportunity.sort_by ).tagged_with(controller.params[:tags], :on=>:tags)
+
+    end
+  end
+
   private
   # Somewhat simplistic parser that extracts query and hash-prefixed tags from
   # the search string and returns them as two element array, for example:

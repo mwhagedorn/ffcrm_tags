@@ -1,0 +1,49 @@
+-if @leads || @contacts || @accounts || @opportunities || @campaigns
+  .tagged_results
+    .title
+      Results Tagged With
+      = params[:tags]
+    .leads
+      -unless @leads.blank?
+        %h3
+          Leads
+        %ul.list
+        -@leads.each do |lead|
+          %li
+            =link_to "#{lead.first_name} #{lead.last_name}", lead_path(lead)
+
+    .contacts
+      -unless @contacts.blank?
+        %h3
+          Contacts
+        %ul.list
+          -@contacts.each do |contact|
+            %li
+              =contact.first_name
+              =contact.last_name
+    .accounts
+      -unless @accounts.blank?
+        %h3
+          Accounts
+        %ul.list
+          -@accounts.each do |account|
+            %li
+              =account.name
+    .opportunities
+      -unless @opportunities.blank?
+        %h3
+          Opportunities
+        %ul.list
+          -@opportunities.each do |opportunity|
+            %li
+              = opportunity.name
+
+    .campaigns
+      -unless @campaigns.blank?
+        %h3
+          Campaigns
+        %ul.list
+          -@campaigns.each do |campaign|
+            %li
+              = campaign.name
+

@@ -15,6 +15,33 @@ module FfcrmTags
       @tags = TagAggregator.tag_counts_on(:tags)
     end
 
+    #TODO move to home_controller hook
+    #def combined_results
+    #
+    # records = {
+    #  :user  => @current_user,
+    #  :order => @current_user.pref[:"#{items}_sort_by"] || klass.sort_by
+    #  }
+    #  pages = {
+    #    :page     => current_page,
+    #    :per_page => @current_user.pref[:"#{items}_per_page"]
+    #  }
+    #
+    #  # Call the hook and return its output if any.
+    #  @accounts = object_hook("accounts")
+    #  @campaigns = object_hook("campaigns")
+    #  @contacts = object_hook("contacts")
+    #  @leads = object_hook("leads")
+    #  @opportunity = object_hook("opportunities")
+    #
+    #
+    #end
+    #
+    #def object_hook(object_name,records, pages)
+    #   hook(:"get_#{object_name}", self, :records => records, :pages => pages)
+    #end
+
+
   end
 end
 
