@@ -1,0 +1,30 @@
+# Ffcrm_Tags
+
+Rails engines implementation of the crm_tags project.
+
+Adds tag clouds and ability to show items tagged across all tags/objects
+
+## Setup
+
+If you are using bundler, add ffcrm_tags to your Gemfile
+	
+	gem "ffcrm_tags", :git =>"git@github.com:mwhagedorn/ffcrm_tags.git"
+	
+Then run:
+	
+	bundle install
+	
+## Fat Free CRM required changes
+
+In order to use tag clouds, you must make a few changes to the stock Fat Free CRM templates.  These are listed below
+
+app/views/home/index.html.haml (this displays results on tag cloud clicks)
+
+	= styles_for
+	= hook(:tagged_results,self,:accounts =>@accounts, :contacts =>@contacts, :leads =>@leads, :opportunities =>@opportunities,:campaigns=>@campaigns)
+
+
+app/views/layouts?_sidebar.html.haml (the tag cloud)
+	
+	hook(:sidebar_bottom, self)
+ 
