@@ -1,4 +1,4 @@
-# Ffcrm_Tags
+# FfcrmTags
 
 Rails engines implementation of the crm_tags project.
 
@@ -24,7 +24,7 @@ app/views/home/index.html.haml (this displays results on tag cloud clicks)
 	= hook(:tagged_results,self,:accounts =>@accounts, :contacts =>@contacts, :leads =>@leads, :opportunities =>@opportunities,:campaigns=>@campaigns)
 
 
-app/views/layouts?_sidebar.html.haml (the tag cloud)
+app/views/layouts/_sidebar.html.haml (the tag cloud)
 	
 	hook(:sidebar_bottom, self)
  
