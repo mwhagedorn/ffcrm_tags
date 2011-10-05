@@ -25,7 +25,6 @@ Gem::Specification.new do |s|
     "lib/ffcrm_tags.rb",
     "lib/ffcrm_tags/controller_actions.rb",
     "lib/ffcrm_tags/controller_hooks.rb",
-    "lib/ffcrm_tags/models.rb",
     "lib/ffcrm_tags/version.rb",
     "lib/ffcrm_tags/view_helpers.rb",
     "lib/ffcrm_tags/view_hooks.rb",
