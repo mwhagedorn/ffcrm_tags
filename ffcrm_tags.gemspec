@@ -15,22 +15,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc"
   ]
-  s.files = [
-    "Gemfile",
-    "LICENSE.txt",
-    "README.rdoc",
-    "Rakefile",
-    "VERSION",
-    "ffcrm_tags.gemspec",
-    "lib/ffcrm_tags.rb",
-    "lib/ffcrm_tags/controller_actions.rb",
-    "lib/ffcrm_tags/controller_hooks.rb",
-    "lib/ffcrm_tags/version.rb",
-    "lib/ffcrm_tags/view_helpers.rb",
-    "lib/ffcrm_tags/view_hooks.rb",
-    "test/helper.rb",
-    "test/test_ffcrm_tags.rb"
-  ]
+  s.files        = Dir.glob("{bin,lib}/**/*") + %w(Rakefile VERSION Gemfile)
   s.homepage = %q{http://github.com/mwhagedorn/ffcrm_tags}
   s.licenses = [%q{MIT}]
   s.require_paths = [%q{lib}]
